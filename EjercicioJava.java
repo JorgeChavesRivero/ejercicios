@@ -8,6 +8,8 @@ public class EjercicioJava {
         int cantidadVotos = 0;
 		double votosRegular = 0;
 		double votosMalo = 0;
+        boolean opcion = true;
+        do {
             System.out.println("Evalua el servicio: 1. Excelente, 2. Regular, 3. Malo, 4. Terminar encuestas");
             int servicio = leer.nextInt();
             switch (servicio) {
@@ -28,11 +30,13 @@ public class EjercicioJava {
                     break;
                 case 4:
                     System.out.println("Se detienen las encuestas");
+                    opcion = false;
                     break;
                 default:
                     System.out.println("Ingrese una opcion correcta");
                     break;
             }
+        } while (opcion);
         double porcentajeExcelente = (votosExcelente / cantidadVotos) * PORCENTAJE;
                 System.out.println("El porcentaje de satisfaccion fue: " + porcentajeExcelente);
         if (porcentajeExcelente >= MINIMOEXCELENTE) {
